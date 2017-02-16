@@ -1,5 +1,5 @@
 
-var computerChoices = ["Sonic", "Mario", "Zelda", "Halo", "Minecraft", "Pokemon", "Call Of Duty", "Final Fantasy", "FIFA", "Kingdom Hearts", "Crash Bandicoot"];
+var computerChoices = ["sonic", "mario", "zelda", "halo", "minecraft", "pokemon", "fifa",];
 var wins = 0;
 var losses = 0;
 var guesses = 15; 
@@ -15,7 +15,7 @@ function computerGuessReset(){
     guesses = 15
     dash = [];
     dashAry = [];
-	computerGuessAry = computerGuess.split("");
+	computerGuessAry = computerGuess.split(" ");
 		for ( k = 0; k < computerGuessAry.length; k++){
     		dashAry.push("_" + " ");
 		}
@@ -42,7 +42,8 @@ var html = "<h2>Guess the Video Game</h2>" +
     "<p>Letters Already Guessed</p>" +
     "<p>" + guessesSoFar + "</p>";
 
-document.querySelector(".hangman").innerHTML = html;
+var hangman=document.querySelector(".hangman");
+hangman.innerHTML = html;
 
 document.onkeyup = function(event){
 
